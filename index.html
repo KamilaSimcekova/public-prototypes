@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktivní prototyp</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img id="screen" src="img/1.svg" alt="Obrazovka 1">
+    <button id="nextBtn">Další</button>
+    
+    <script>
+        const screens = ["img/1.svg", "img/2.svg", "img/3.svg", "img/4.svg", "img/5.svg", "img/6.svg", "img/7.svg", "img/8.svg", "img/9.svg", "img/10.svg"];
+        let currentIndex = 0;
+        
+        document.getElementById("nextBtn").addEventListener("click", function() {
+            currentIndex++;
+            if (currentIndex < screens.length) {
+                document.getElementById("screen").src = screens[currentIndex];
+            } else {
+                currentIndex = 0;
+                document.getElementById("screen").src = screens[currentIndex];
+            }
+        });
+    </script>
+</body>
+</html>
